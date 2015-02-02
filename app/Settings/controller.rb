@@ -2,6 +2,7 @@ require 'rho'
 require 'rho/rhocontroller'
 require 'rho/rhoerror'
 require 'helpers/browser_helper'
+require "rexml/document"
 
 class SettingsController < Rho::RhoController
   include BrowserHelper
@@ -39,11 +40,24 @@ class SettingsController < Rho::RhoController
   def do_login
     if @params['login'] and @params['password']
       begin
-        Rho::RhoConnectClient.login(@params['login'], @params['password'], (url_for :action => :login_callback) )
-        @response['headers']['Wait-Page'] = 'true'
-        render :action => :wait
-      rescue Rho::RhoError => e
-        @msg = e.message
+        response = Rho::Network.get({
+             :url => "http://www.godlikebod.com/webservice2_prod1.asmx/UserLogin?UserNameTxt=#{@params['login']}&passwordTxt=#{@params['password']}"
+           })
+        doc = REXML::Document.new(response["body"])
+        login = doc.elements.to_a( "//ClientInfos/ClientInfo" )
+        if login.count > 0
+        begin
+          redirect url_for(:model => :UserProfile,:action => :index, :user_pk => 4)
+        end
+       
+        else
+          begin
+
+              @msg = "Invalid Login Please Try Again."
+              render :action => :login
+          end
+          end
+       
         render :action => :login
       end
     else
