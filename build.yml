@@ -1,0 +1,26 @@
+#sdk: "C:/MotorolaRhoMobileSuite5.0.2/ruby/lib/ruby/gems/1.9.1/gems/rhodes-5.0.2"
+sdkversion: 5.0.0
+name: C:\Users\Siva\workspace\RhoMobileApplication2
+version: 1.0
+vendor: rhomobile
+build: debug
+applog: rholog.txt
+iphone:
+  configuration: Release
+  sdk: iphonesimulator7.0
+  provisionprofile:
+  codesignidentity: iPhone Developer
+  entitlements: ""
+  BundleIdentifier: com.rhomobile.cuserssivaworkspacerhomobileapplication2
+  BundleURLScheme: cuserssivaworkspacerhomobileapplication2
+wp8:
+  productid: '6a498580-8c95-0132-5daf-6817291f8bc9'
+android:
+  manifest_template: 'AndroidManifest.erb'
+  version: 2.3.3
+
+wm:
+  #sdk: "MC3000c50b (ARMV4I)"
+  #sdk: "Windows Mobile 6.5.3 Professional DTK (ARMV4I)"
+
+extensions: ["rhoconnect-client"]
