@@ -47,7 +47,7 @@ class SettingsController < Rho::RhoController
         login = doc.elements.to_a( "//ClientInfos/ClientInfo" )
         if login.count > 0
         begin
-          redirect url_for(:model => :UserProfile,:action => :index, :user_pk => 4)
+          redirect url_for(:model => :UserProfile,:action => :index, :user_pk =>"3")
         end
        
         else

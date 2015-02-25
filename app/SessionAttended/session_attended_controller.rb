@@ -7,10 +7,10 @@ class SessionAttendedController < Rho::RhoController
   # GET /SessionAttended
   def index
     response = Rho::Network.get({
-            :url => "http://localhost:49814/WebSite1/webservice2_prod1.asmx/GetSessions?userpk=#{@params['user_pk']}&sesstype=Attended"
+            :url => "http://www.godlikebod.com/webservice2_prod1.asmx/GetSessions?userpk=4&sesstype=Attended"
           })
           doc = REXML::Document.new(response["body"]) 
-       doc.elements.each("//Session") do |element|
+       doc.elements.each("//clientsession") do |element|
          @session_attended = SessionAttended.create(:SessionID => element.elements['sess_pk'].text.to_s,
                :SessionStartDate => element.elements['sess_startDate'].text.to_s,
                :SessionEndDate => element.elements['sess_endDate'].text.to_s,

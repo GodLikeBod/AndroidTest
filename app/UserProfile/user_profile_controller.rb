@@ -7,7 +7,7 @@ class UserProfileController < Rho::RhoController
   # GET /UserProfile
   def index
          response = Rho::Network.get({
-            :url => "http://www.godlikebod.com/webservice2_prod1.asmx/ClientDetails?userpk=#{@params['user_pk']}"
+            :url => "http://www.godlikebod.com/webservice2_prod1.asmx/ClientDetails?userpk=3"
         })
      doc = REXML::Document.new(response["body"])
      doc.elements.each("//Client") do |element|
