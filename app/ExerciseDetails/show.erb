@@ -1,0 +1,30 @@
+<META HTTP-Equiv="mediaPlayer" Content="start">
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @exercisedetails.Exc_Name %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @exercisedetails.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">ExcName</div>
+            <div class="itemValue"><%= @exercisedetails.Exc_Name %></div>
+            <video width="320" height="240" controls>
+            <source src="movie.mp4" type="video/mp4">
+        
+            Your browser does not support the video tag.
+          </video>
+          </li>
+        
+    </ul>
+  </div>
+
+</div>

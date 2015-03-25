@@ -5,8 +5,8 @@
     <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
       Back
     </a>
-      <a href="<%= url_for :model => :SessionAttended,:action => :index, :query => {:user_pk => 4} %>" class="ui-btn-right" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
-          Attended Session
+      <a href="<%= url_for :model => :ExerciseDetails,:action => :index, :query => {:user_pk => 4} %>" class="ui-btn-right" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+          Exercise Details
         </a>
   </div>
 

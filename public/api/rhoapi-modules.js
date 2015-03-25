@@ -3023,8 +3023,8 @@ var EB = Rho;
           // function(/* const rho::String& */ url, /* optional function */ oResult)
         , { methodName: 'openUrl', nativeName: 'openUrl', valueCallbackIndex: 1 }
     
-          // function(/* const rho::String& */ localPathToZip, /* const rho::String& */ password, /* optional function */ oResult)
-        , { methodName: 'unzipFile', nativeName: 'unzipFile', valueCallbackIndex: 2 }
+          // function(/* const rho::String& */ localPathToZip, /* const rho::String& */ password, /* const rho::String& */ outputFileName, /* optional function */ oResult)
+        , { methodName: 'unzipFile', nativeName: 'unzipFile', valueCallbackIndex: 3 }
     
           // function(/* const rho::String& */ localPathToZip, /* const rho::String& */ localPathToFile, /* const rho::String& */ password, /* optional function */ oResult)
         , { methodName: 'zipFile', nativeName: 'zipFile', valueCallbackIndex: 3 }
@@ -3407,6 +3407,98 @@ var EB = Rho;
     
 
     rhoUtil.namespace(moduleNS, RhoConnectClient);
+
+    
+
+    
+
+})(Rho.jQuery, Rho, Rho.util);
+// Module Rho.Mediaplayer
+
+
+(function ($, rho, rhoUtil) {
+    'use strict';
+
+    var moduleNS = 'Rho.Mediaplayer';
+    var apiReq = rhoUtil.apiReqFor(moduleNS);
+
+
+    // === Mediaplayer class definition ===
+
+    function Mediaplayer() {
+        var id = null;
+        this.getId = function () {return id;};
+
+        if (1 == arguments.length && arguments[0][rhoUtil.rhoIdParam()]) {
+            if (moduleNS != arguments[0][rhoUtil.rhoClassParam()]) {
+                throw "Wrong class instantiation!";
+            }
+            id = arguments[0][rhoUtil.rhoIdParam()];
+        } else {
+            id = rhoUtil.nextId();
+            // constructor methods are following:
+            
+        }
+    };
+
+    // === Mediaplayer instance properties ===
+
+    rhoUtil.createPropsProxy(Mediaplayer.prototype, [
+    ], apiReq, function(){ return this.getId(); });
+
+    // === Mediaplayer instance methods ===
+
+    rhoUtil.createMethodsProxy(Mediaplayer.prototype, [
+    
+    ], apiReq, function(){ return this.getId(); });
+
+    
+
+    rhoUtil.createRawPropsProxy(Mediaplayer.prototype, [
+    ]);
+
+    // === Mediaplayer constants ===
+
+    
+
+
+
+    // === Mediaplayer static properties ===
+
+    rhoUtil.createPropsProxy(Mediaplayer, [
+    ], apiReq);
+
+    // === Mediaplayer static methods ===
+
+    rhoUtil.createMethodsProxy(Mediaplayer, [
+    
+          // function(/* const rho::String& */ filename, /* optional function */ oResult)
+          { methodName: 'start', nativeName: 'start', valueCallbackIndex: 1 }
+    
+          // function(/* optional function */ oResult)
+        , { methodName: 'stop', nativeName: 'stop', valueCallbackIndex: 0 }
+    
+          // function(/* const rho::String& */ filename, /* optional function */ oResult)
+        , { methodName: 'startvideo', nativeName: 'startvideo', valueCallbackIndex: 1 }
+    
+          // function(/* optional function */ oResult)
+        , { methodName: 'stopvideo', nativeName: 'stopvideo', valueCallbackIndex: 0 }
+    
+          // function(/* optional function */ oResult)
+        , { methodName: 'getAllRingtones', nativeName: 'getAllRingtones', persistentCallbackIndex: 0, valueCallbackIndex: 2 }
+    
+          // function(/* const rho::String& */ name, /* optional function */ oResult)
+        , { methodName: 'playRingTone', nativeName: 'playRingTone', valueCallbackIndex: 1 }
+    
+          // function(/* optional function */ oResult)
+        , { methodName: 'stopRingTone', nativeName: 'stopRingTone', valueCallbackIndex: 0 }
+    
+    ], apiReq);
+
+    // === Mediaplayer default instance support ===
+    
+
+    rhoUtil.namespace(moduleNS, Mediaplayer);
 
     
 
