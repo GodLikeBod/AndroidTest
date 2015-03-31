@@ -1,6 +1,6 @@
 #sdk: "C:/MotorolaRhoMobileSuite5.0.2/ruby/lib/ruby/gems/1.9.1/gems/rhodes-5.0.2"
 sdkversion: "5.0.0"
-name: "com.rhomobile.cuserssivaworkspacerhomobileapplication2"
+name: "cuserssivaworkspacerhomobileapplication2"
 version: 2.0
 vendor: "rhomobile"
 build: "debug"
