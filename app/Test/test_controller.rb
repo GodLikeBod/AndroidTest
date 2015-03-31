@@ -6,6 +6,7 @@ class TestController < Rho::RhoController
 
   # GET /Test
   def index
+    
     @tests = Test.find(:all)
     render :back => '/app'
   end

@@ -26,8 +26,9 @@ class ExerciseDetailsController < Rho::RhoController
 
   # GET /ExerciseDetails/{1}
   def show
-  
+   
     @exercisedetails = ExerciseDetails.find(@params['id'])
+  
     if @exercisedetails
       render :action => :show, :back => url_for(:action => :index)
     else

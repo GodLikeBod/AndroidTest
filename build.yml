@@ -1,7 +1,7 @@
 #sdk: "C:/MotorolaRhoMobileSuite5.0.2/ruby/lib/ruby/gems/1.9.1/gems/rhodes-5.0.2"
 sdkversion: "5.0.0"
 name: "C:/Users/Siva/workspace/RhoMobileApplication2"
-version: 1.3
+version: 2.0
 vendor: "rhomobile"
 build: "debug"
 applog: "rholog.txt"
@@ -23,7 +23,7 @@ wm:
 #sdk: "Windows Mobile 6.5.3 Professional DTK (ARMV4I)"
 extensions:
   - rhoconnect-client
+  - mediaplayer
   - rexml
   - set
   - coreapi
-  
