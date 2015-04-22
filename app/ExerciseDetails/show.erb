@@ -1,3 +1,16 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @exercisedetails.Exc_Name%></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+      <a href="<%= url_for :model => :Details,:action => :new, :query => {:user_pk => 4} %>" class="ui-btn-right" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+          Exercise Details
+        </a>
+  </div>
+
+<div data-role="content">
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -25,10 +38,11 @@ alert(e)
 })
 }
 </script>
- 
-    <h1><%= @exercisedetails.Exc_Name %></h1>
+
+
+ <h1><%= @exercisedetails.Exc_Name %></h1>
     <button onclick="play()">Play Video</button>
-
-
 </body>
 </html>
+  </div>
+  </div>
